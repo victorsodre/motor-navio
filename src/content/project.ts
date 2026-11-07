@@ -1,0 +1,7 @@
+export const REVIEW='https://www.swiss-ships.ch/berichte/waertsilae/Wartsila-RTA96C-engine-technology-review.pdf';
+export const MANUAL='https://fr.scribd.com/document/221531258/Brief-Description-of-the-Sulzer-Engine';
+export const project={intro:'Do pistão à hélice. Uma volta, um ciclo.',video:'https://www.instagram.com/reel/DfVTXkqEmNA/',sources:[
+ {title:'RT-flex96C · arquitetura e dimensões',detail:'Wärtsilä, revisão técnica de 2008, pp. 5, 13–15, 18 e 23. PDF do fabricante preservado por Swiss Ships. Diâmetro 0,96 m, curso 2,50 m e cota A de 25,914 m para 14 cilindros.',url:REVIEW},
+ {title:'Dois tempos, cruzeta e acoplamento direto',detail:'Manual Wärtsilä RT-flex96C, 2004, seção 0050–1/A1, pp. 1–2, em espelho Scribd. Sem eixo de comando de válvulas; admissão por janelas e escape no cabeçote.',url:MANUAL},
+ {title:'Transmissão direta',detail:'Enciclopédia Wärtsilä: motor ligado diretamente à linha de eixo. A hélice desta cena é ilustrativa e não identifica um navio.',url:'https://www.wartsila.com/encyclopedia/term/direct-drive'},
+],disclosure:'Esquema autoral do Wärtsilä RT-flex96C de 14 cilindros. Um cilindro demonstra o ciclo; os demais dão contexto. Curso e diâmetro seguem a ficha técnica. A figura de 1,80 m é uma referência definida pelo autor, não uma média de altura humana. Biela, estrutura, hélice, ângulos de abertura e velocidade são simplificados. Cores indicam etapas, não temperatura. Não há cálculo de potência, consumo ou velocidade do navio. Fontes consultadas em 07/11/2026.'};

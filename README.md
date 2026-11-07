@@ -1,35 +1,41 @@
 # Motor de navio gigante
 
-> **Estado: documentação inicial.** Aplicação ainda não implementada. Planejamento criado em 2026-11-07; prioridade recomendada 8/10.
+Aplicação educativa 3D do **Wärtsilä RT-flex96C de 14 cilindros**: do pistão à hélice, com um cilindro em corte, cruzeta, biela e transmissão direta. Desenvolvimento concluído e validado localmente; sem deploy público.
 
-**Como o movimento de um motor gigante chega à hélice?**
+## Executar
 
-Um motor marítimo de arquitetura identificada, com um cilindro em corte e caminho mecânico até o eixo. A escala humana só terá dimensões numéricas com fonte.
+Node.js ≥22.18. Versões fixadas no lockfile.
 
-Direção e autoria editorial: **Victor Sodré / ovictorlab**. [Site](https://ovictorlab.com/) · [Referência Fusquinha](https://victorsodre.github.io/fusquinha/) · [Repositório](https://github.com/victorsodre/motor-navio).
+```sh
+npm ci
+npm run dev
+npm test
+npm run check
+npm run build
+npm run preview
+```
 
-## Por que desenvolver
+O build estático fica em `dist/`, com base relativa, fontes locais e licenças. Não requer backend, LLM ou GPU de produção. O WebGL usa o navegador do visitante.
 
-O Reel recente sobre motor de navio registrou 7.494 visualizações no Instagram. O vídeo longo sobre flutuação é uma conexão editorial, não evidência específica sobre o motor. Consulta em 07/11/2026. Métricas acumuladas são sinais de interesse; não comprovam demanda pelo aplicativo ou alcance orgânico.
+## Explorar
 
-- [Motor de navio — Instagram](https://www.instagram.com/reel/DfVTXkqEmNA/)
-- [Por que o navio flutua — YouTube](https://www.youtube.com/watch?v=SoQtd_t-MUk)
+- **Mover o motor:** ciclo de dois tempos, pausa, velocidade didática e avanço por ângulo ou etapa.
+- **Abrir cilindro:** revela pistão, haste, cruzeta, biela e troca de gases; preserva o contexto do conjunto.
+- **Comparar escala:** curso de 2,50 m ao lado de uma figura de 1,80 m, definida para comparação. A câmera muda; a escala dos objetos permanece.
+- Seis grupos selecionáveis por catálogo/clique, busca, isolamento, foco, tour, órbita, zoom, malha, reset, tela cheia e PNG 16:9/9:16.
+- Teclado: controles HTML; `R` reenquadra e `Escape` fecha detalhe/diálogo. Movimento reduzido sem autoplay; etapas continuam disponíveis.
 
-## Começar por aqui
+## Limites do modelo
 
-1. [Escopo e critérios de conclusão](docs/ESCOPO.md).
-2. [Lista de execução](docs/EXECUCAO.md).
-3. [Identidade visual do ovictorlab](docs/IDENTIDADE-VISUAL.md).
-4. [Arquitetura proposta e reaproveitamento do Fusquinha](docs/ARQUITETURA.md).
-5. [Assets, fontes e pendências de apuração](docs/ASSETS-E-FONTES.md).
-6. [Manutenção, validação e publicação futura](docs/MANUTENCAO.md).
-7. [Decisões e estado do projeto](docs/DECISOES.md).
-8. [Textos para o X](POSTAGENS-X.md) e [ordem da coleção](docs/COLECAO.md).
+Um cilindro móvel e treze repetições visuais. A ficha do fabricante sustenta arquitetura, curso, diâmetro e cota longitudinal A. Demais proporções, hélice, temporização e velocidade são esquemáticos. Sem simulação de combustão, potência, consumo, hidrodinâmica ou ordem de ignição dos 14 cilindros. A referência humana é autoral, não uma média antropométrica.
 
-**Próxima ação:** Selecionar um motor documentado e fechar um corte de um cilindro antes de criar o conjunto repetido.
+## Origem e documentação
 
-**Esforço relativo:** Alto: asset de interior e escolha de arquitetura determinam o trabalho. Prazo só deve ser estimado depois da validação de modelo e fontes.
+[Reel do motor](https://www.instagram.com/reel/DfVTXkqEmNA/). O [vídeo sobre flutuação](https://www.youtube.com/watch?v=SoQtd_t-MUk) é uma ligação editorial, não fonte sobre este mecanismo.
 
-## O que esta entrega inclui
+- [Apuração e fontes](docs/APURACAO.md), [escopo](docs/ESCOPO.md) e [direção visual](docs/DIRECAO-VISUAL.md).
+- [Arquitetura](docs/ARQUITETURA.md), [identidade](docs/IDENTIDADE-VISUAL.md), [assets](docs/ASSETS-E-FONTES.md) e [manutenção](docs/MANUTENCAO.md).
+- [Validação](docs/VALIDACAO.md): sete testes e 97 verificações no Chrome; celular emulado, sem aparelho físico.
+- [Execução](docs/EXECUCAO.md), [decisões](docs/DECISOES.md) e [rascunhos do X](POSTAGENS-X.md). Nenhuma postagem enviada.
 
-Guias de desenvolvimento e manutenção, identidade visual, limites de escopo e rascunhos de divulgação. Não há aplicação, modelo 3D novo, licença de asset adquirida ou site publicado. Os repositórios foram preparados para trabalho independente, inicialmente privado. Não existe `npm install`, `npm test` ou deploy a executar nesta fase.
+Repositório privado: [victorsodre/motor-navio](https://github.com/victorsodre/motor-navio). Publicação depende de pedido próprio; nenhum deploy automático foi criado.

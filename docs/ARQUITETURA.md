@@ -1,71 +1,27 @@
-# Arquitetura proposta
+# Arquitetura implementada
 
-Documento de planejamento. Nenhum comando de build ou teste existe ainda neste repositório.
+React 19.2.6, TypeScript 5.9.3, Three.js 0.187.0 e Vite 8.3.6; versões fixas no lockfile. Aplicação estática com base `./`. Fontes Fontsource locais, sem chamadas a serviços na carga inicial.
 
-## Base
+| Arquivo | Responsabilidade |
+|---|---|
+| `src/simulation/engine.ts` | Ângulo 0–360°, cinemática de cruzeta, curso, válvula didática, janelas geometricamente descobertas e relógio limitado. |
+| `src/scene/model.ts` | Geometria autoral de seis grupos, cilindro de demonstração, repetição estrutural dos outros treze, hélice e referência humana. |
+| `src/scene/rig.ts` | Aplica uma pose absoluta: pistão, haste, biela, virabrequim, eixo, válvula e indicadores de ar. |
+| `src/scene/runtime.ts` | WebGL, câmera, seleção, corte, isolamento, escala, demanda de renderização e perda de contexto. |
+| `src/scene/camera.ts`, `capture.ts` | Enquadramento por limites projetados e exportação 1920×1080 / 1080×1920, restaurando a câmera. |
+| `src/content/` | Catálogo, explicações, referências e limites visíveis. |
+| `src/App.tsx`, `src/ui/` | Estado, catálogo, tour, controles HTML, diálogos e fallback. |
 
-React + TypeScript + Three.js + Vite, como referência do Fusquinha. Fixar versões e lockfile no início da implementação, após verificar compatibilidade atual e licença do código reaproveitado. Não adotar a versão antiga do Three apenas por cópia automática.
+## Invariantes
 
-Aplicação estática executada no navegador do visitante. O MVP não requer LLM, backend nem GPU de produção permanentemente alocada. Modelagem e processamento de assets são tarefas separadas e delimitadas.
+Unidade metro. `sampleEngine` normaliza o ângulo e devolve uma pose pura. Raio da manivela = curso/2; comprimento da biela constante, cruzeta sem deslocamento lateral, haste vertical. A linha de eixo e a hélice recebem a mesma rotação. O app não representa a ordem de ignição dos demais cilindros.
 
-## Organização sugerida
+O corte oculta tampas/passarelas do último vão e recorta a camisa. É um recurso de inspeção, não desmontagem. Trocar vista ou comparar escala não redimensiona peças. O reset volta a 45°, motor fechado, velocidade 1×, parado e sem seleção. Isolar armazena a câmera anterior e restaura ao retornar.
 
-```text
-src/
-  app/              composição da tela e estados de carregamento
-  scene/            cena, câmera, iluminação e renderização
-  interactions/     seleção, isolamento, corte e desmontagem
-  simulation/       estado determinístico do mecanismo educativo
-  content/          catálogo, explicações, vídeos e fontes
-  ui/               controles HTML acessíveis
-  styles/           tokens do ovictorlab e layout
-public/
-  models/           somente arquivos com entrega web autorizada
-  audio/            sons licenciados, carregados sob demanda
-  fonts/            fontes locais e respectivas licenças
-```
+O relógio usa tempo decorrido, limita cada passo a 0,1 s e só avança quando reproduzindo e visível. Renderização limitada a 30 Hz, sob demanda em repouso, suspensa quando a aba está oculta. DPR ≤1,5, sombra de 1024², meshes estáticos combinados por material. Sem física geral, áudio ou texturas de terceiros.
 
-Criar só o que o piloto utilizar. Começar independente; extrair um pacote compartilhado depois que o segundo projeto comprovar reutilização concreta.
+## Entrega e limites
 
-## Contratos
+`npm test`, `npm run check`, `npm run build`. Build sem backend, testado em `/motor-navio/` com recarga direta. Falha de WebGL preserva explicações/fontes e desabilita reprodução. Captura PNG inclui marca e identificação de esquema; a vista de escala também inclui as duas cotas e a natureza da referência humana.
 
-- Peça: `id`, `label`, `groupId`, nós do modelo, pose de origem, descrição e referências. IDs estáveis entre atualizações.
-- Seleção: um catálogo determina o que pode ser selecionado; elementos auxiliares não capturam clique por acidente.
-- Desmontagem: transformação deriva de pose de origem e progresso 0–1; nunca acumula deslocamento a cada frame. Corte e desmontagem são modos distintos.
-- Mecanismo: estado serializável, limites explícitos, pausa e reset. Tempo de animação não depende de quantidade de frames.
-- Fontes: título, instituição/autor, URL, data de consulta, afirmação suportada e limite. Texto da interface aponta para esse catálogo.
-- Áudio: inicia após gesto, tem volume/mute e para com cena oculta ou mecanismo desligado.
-
-## O que avaliar no Fusquinha
-
-`src/VehicleScene.tsx`: renderização/câmera/seleção. `src/catalog.ts`: agrupamento. `src/layout.ts`: posições e enquadramento. `src/vehicle-rig.ts`: pivôs e articulação. `src/vehicle-sounds.ts`: áudio. `src/engine-motion.ts`: movimento e pausa. Esses arquivos são referências de implementação, não garantem uma biblioteca pronta para outros objetos.
-
-Antes de copiar, conferir responsabilidades, licenças e dependências. Motor, material, cenário e GLB do Fusquinha não pertencem automaticamente ao novo projeto.
-
-## Orçamento inicial de desempenho
-
-Metas propostas a validar no primeiro protótipo, não resultados já medidos:
-
-- Cena em aproximadamente 30 fps durante interação no dispositivo móvel de referência registrado.
-- Renderização sob demanda quando parada; suspender trabalho em aba oculta.
-- Começar com DPR limitado a 1,5 no celular, texturas de 1K quando suficientes e cena progressiva. Ajustar por medição visual e de memória.
-- Buscar até 10 MB comprimidos para a primeira cena útil; qualquer exceção precisa de comparação antes/depois e carregamento progressivo.
-- Medir modelo, texturas, draw calls e tempo até o primeiro controle utilizável. Evitar simulação física genérica quando uma cinemática determinística explica o fenômeno.
-
-## Entrega futura
-
-Build estático com caminhos relativos ou base configurável; testar recarga direta e hospedagem em subpasta. Integração com ovictorlab.com pode usar rota ou link, a decidir quando houver aplicação pronta. Não alterar o site principal durante o desenvolvimento inicial.
-
-Captura PNG é uma possibilidade herdada do Fusquinha. Presets de câmera 16:9 e 9:16 e tour guiado são extensões planejadas; não estão implementados. Gravar vídeo exige validar o método de captura e sincronização do som.
-
-## Implementação específica
-
-Geometria: Modelagem de um cilindro fiel à arquitetura escolhida, com repetição visual dos demais. Conjuntos separados para escala e inspeção.
-
-Estado proposto: `stopped ↔ running ↔ paused; crankAngle é a origem do movimento; scaleView muda a câmera, não altera dimensões do modelo.`
-
-Invariantes que devem orientar código e testes:
-
-- Escolher dois ou quatro tempos e a arquitetura real antes de desenhar os componentes.
-- Não transplantar automaticamente o mecanismo automotivo para um grande motor marítimo.
-- Eixo e hélice seguem a transmissão escolhida; não inserir redutor ou conexão direta sem fonte.
+Sete testes cobrem cinemática, um ciclo por volta, abertura, relógio, articulação real do rig, retorno sem deriva e câmera. Detalhes e métricas em VALIDACAO.md. Sem deploy ou integração no site principal nesta entrega.

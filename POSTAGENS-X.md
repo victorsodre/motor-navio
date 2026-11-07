@@ -4,18 +4,18 @@ Rascunhos para Victor publicar posteriormente. **Nada foi enviado.** Público: p
 
 ## Planejamento
 
-Condição/mídia: Pode ser usado para anunciar a intenção. Mostrar esquema identificado como plano ou referência do Fusquinha.
+Condição/mídia: anúncio de desenvolvimento, com captura real identificada como esquema educativo.
 
 ```text
-Um motor de navio merece uma câmera que possa entrar nele. Organizei o projeto para explorar um cilindro, seguir o movimento até o eixo e comparar a escala com uma pessoa. Primeiro passo: escolher uma arquitetura bem documentada.
+Um motor de navio merece uma câmera que possa entrar nele. Organizei o projeto para explorar um cilindro, seguir o movimento até o eixo e comparar a escala com uma pessoa. A referência escolhida é o RT-flex96C, com dois tempos e cruzeta.
 ```
 
 ## Bastidor
 
-Condição/mídia: Usar somente depois de existir o protótipo descrito. Anexar captura real da interação; ajustar o texto ao que efetivamente funcionar.
+Condição/mídia: recurso implementado e validado localmente. Anexar captura real do cilindro em corte; sem sugerir acesso público.
 
 ```text
-Neste protótipo do motor de navio, a passarela ajuda a perceber o tamanho. O corte mostra o mecanismo de um cilindro e seu movimento até o eixo. Estou trabalhando a escala junto com a explicação.
+O motor de navio já funciona no laboratório: pistão, cruzeta, biela e hélice no mesmo ciclo. Dá para abrir um cilindro e comparar o curso de 2,50 m com uma figura de 1,80 m. É um esquema educativo do RT-flex96C. Ainda sem link público.
 ```
 
 ## Lançamento

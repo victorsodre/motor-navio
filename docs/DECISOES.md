@@ -8,12 +8,18 @@
 - Repositório inicialmente privado por escolha operacional conservadora nesta fase. O pedido autoriza o envio dos guias; não foi tratado como solicitação de implementar e publicar os aplicativos.
 - Nenhuma postagem no X enviada. Textos de protótipo e lançamento têm condições explícitas de uso.
 
-## Pendências técnicas
+## 2026-11-07 — implementação e validação
 
-- Manual ou material técnico do fabricante para um modelo específico de motor marítimo.
-- Dimensões, tipo de ciclo, transmissão e aplicação do modelo selecionado.
+O pedido posterior de desenvolver todos os projetos autorizou a aplicação. A restrição inicial a documentos foi substituída para desenvolvimento; publicação continua fora da rodada.
 
-Próxima ação: Selecionar um motor documentado e fechar um corte de um cilindro antes de criar o conjunto repetido.
+- Referência: RT-flex96C de 14 cilindros, ficha técnica de 2008 e manual 0050–1/A1. Dois tempos, cruzeta, admissão por janelas e escape comandado eletronicamente. Sem vela ou comando automotivo.
+- Um interior funcional, outros treze cilindros como contexto. Não inventar ordem de ignição ou simular a instalação completa de um navio.
+- Curso 2,50 m, bore 0,96 m e cota A 25,914 m documentados. Figura de 1,80 m definida como parâmetro de comparação, não dado humano observado. Cota F de desmontagem rejeitada como altura total.
+- Seis grupos, corte, comparação de escala, reprodução/etapas, seleção/isolamento, tour, malha e PNG. Som e desmontagem não agregam ao mecanismo e foram dispensados.
+- Identidade oficial preservada. Sete testes, 97 verificações Chrome e build em subpasta aprovados. Limites: celular emulado e esquema educativo.
+- Rascunhos do X ajustados ao estado implementado. Sem postagem ou deploy.
+
+Próximo da coleção: Itaipu por dentro. Evidência em VALIDACAO.md.
 
 ## Como registrar mudanças
 
