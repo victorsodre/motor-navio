@@ -4,10 +4,10 @@ Rascunhos para Victor publicar posteriormente. **Nada foi enviado.** Público: p
 
 ## Apresentação do projeto
 
-Condição/mídia: Versão local concluída. Anexar captura real; o texto não anuncia uma URL pública.
+Condição/mídia: Anexar captura real da experiência. URL: https://victorsodre.github.io/motor-navio/
 
 ```text
-O motor de navio ganhou um corte 3D no ovictorlab. A referência é o RT-flex96C: dois tempos, cruzeta e transmissão direta até a hélice. Dá para abrir um cilindro e comparar a escala. A versão local está pronta.
+O motor de navio do ovictorlab já está no ar. Explore um cilindro em corte, a cruzeta e o caminho até a hélice. Um modelo educativo do RT-flex96C, com proporções e simplificações explicadas.
 ```
 
 ## Bastidor
@@ -20,10 +20,10 @@ O motor de navio já funciona no laboratório: pistão, cruzeta, biela e hélice
 
 ## Lançamento
 
-Condição/mídia: Usar somente depois de publicar e validar o aplicativo. Anexar demonstração real; responder com a URL pública exata. Não usar endereço privado de repositório como link para experimentar.
+Condição/mídia: Anexar demonstração real e abrir a URL pública para conferir antes de enviar.
 
 ```text
-O motor de navio explorável ficou pronto. Entre no corte, acompanhe o movimento e compare a escala do conjunto. Link na resposta.
+O motor de navio explorável ficou pronto. Entre no corte, acompanhe o movimento e compare a escala do conjunto. https://victorsodre.github.io/motor-navio/
 ```
 
 ## Antes de colar no X
@@ -31,5 +31,5 @@ O motor de navio explorável ficou pronto. Entre no corte, acompanhe o movimento
 - Conferir se o tempo verbal corresponde ao estado real do projeto.
 - Validar duração, legibilidade e texto alternativo da mídia anexada.
 - Conferir o comprimento no compositor; os rascunhos não dependem de assinatura ou postagem longa.
-- Inserir link somente quando existir e puder ser aberto pelo público.
+- Abrir a URL pública acima antes de postar; conferir também em uma janela sem sessão.
 - Após publicar, registrar data e permalink aqui. Não automatizar envios a partir deste arquivo.

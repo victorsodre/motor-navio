@@ -1,6 +1,10 @@
 # Motor de navio gigante
 
-Aplicação educativa 3D do **Wärtsilä RT-flex96C de 14 cilindros**: do pistão à hélice, com um cilindro em corte, cruzeta, biela e transmissão direta. Desenvolvimento concluído e validado localmente; sem deploy público.
+**[Abrir a experiência →](https://victorsodre.github.io/motor-navio/)** · [Os 10 experimentos](docs/COLECAO.md) · [Publicação e manutenção](docs/PUBLICACAO.md)
+
+[![Motor de navio — captura real da experiência](public/share.png)](https://victorsodre.github.io/motor-navio/)
+
+Aplicação educativa 3D do **Wärtsilä RT-flex96C de 14 cilindros**: do pistão à hélice, com um cilindro em corte, cruzeta, biela e transmissão direta. Desenvolvimento concluído; aplicação estática no GitHub Pages.
 
 ## Executar
 
@@ -38,4 +42,4 @@ Um cilindro móvel e treze repetições visuais. A ficha do fabricante sustenta 
 - [Validação](docs/VALIDACAO.md): sete testes e 97 verificações no Chrome; celular emulado, sem aparelho físico.
 - [Execução](docs/EXECUCAO.md), [decisões](docs/DECISOES.md) e [rascunhos do X](POSTAGENS-X.md). Nenhuma postagem enviada.
 
-Repositório privado: [victorsodre/motor-navio](https://github.com/victorsodre/motor-navio). Publicação depende de pedido próprio; nenhum deploy automático foi criado.
+Repositório público: [victorsodre/motor-navio](https://github.com/victorsodre/motor-navio). Publicação automática no GitHub Pages; procedimento em [PUBLICACAO.md](docs/PUBLICACAO.md).

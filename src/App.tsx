@@ -1,3 +1,4 @@
+import { CollectionNav } from './ui/CollectionNav.tsx';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { ArrowLeft, ArrowRight, ArrowUpRight, Box, ChevronRight, Download, Focus, Layers3, Maximize, Minus, Plus, Search, X } from 'lucide-react';
 import { Brand } from './ui/Brand.tsx';
@@ -45,7 +46,7 @@ export function App() {
   useEffect(() => {if (selected && innerWidth <= 900) {const id = requestAnimationFrame(() => inspector.current?.scrollIntoView({block: 'nearest', behavior: reduced ? 'instant' : 'smooth'}));return () => cancelAnimationFrame(id);}}, [selected, reduced]);
   useEffect(() => {
     const key = (e: KeyboardEvent) => {
-      if (e.ctrlKey || e.metaKey || e.altKey || e.target instanceof HTMLInputElement || sources || drawer) return;
+      if (document.querySelector('dialog[open]') || e.ctrlKey || e.metaKey || e.altKey || e.target instanceof HTMLInputElement || sources || drawer) return;
       if (e.key.toLowerCase() === 'r') scene.current?.home();
       if (e.key === 'Escape') select(null);
     };
@@ -66,7 +67,7 @@ export function App() {
       <div className="mobile-actions"><button onClick={() => setDrawer(true)}><Layers3 size={16}/>Conjuntos <span>6</span></button><button disabled={!parts.length || Boolean(error)} onClick={() => guide(0)}>Conhecer o motor <ArrowRight size={16}/></button></div>
       <CycleControls angle={angle} playing={playing} speed={speed} disabled={!parts.length || Boolean(error)} setAngle={setAngle} setSpeed={setSpeed} setPlaying={setPlaying} reset={reset} openCylinder={()=>{setCut(true);setScaleView(false);setIsolated(false);}}/>
       <p className="mechanism-note">{`JANELAS ${cycle.portsOpen?'ABERTAS':'FECHADAS'} · ESCAPE ${cycle.exhaustLift>.001?'ABERTO':'FECHADO'} · EIXO E HÉLICE 1:1 · VELOCIDADE DIDÁTICA`}</p>
-    </main><footer><span>UM EXPERIMENTO DO OVICTORLAB <i>© 2026</i></span><button onClick={() => setSources(true)}>Como funciona · Fontes e créditos <ArrowUpRight size={13}/></button></footer>
+    </main><footer><span>UM EXPERIMENTO DO OVICTORLAB <i>© 2026</i></span><button onClick={() => setSources(true)}>Como funciona · Fontes e créditos <ArrowUpRight size={13}/></button><CollectionNav current="motor-navio"/></footer>
     <Sources open={sources} onClose={() => setSources(false)}/><dialog ref={dialog} className="parts-dialog" aria-label="Conjuntos do motor" onClose={() => setDrawer(false)}><div className="dialog-top"><span className="eyebrow">CONHEÇA O MOTOR</span><button className="icon-button" aria-label="Fechar conjuntos" onClick={() => setDrawer(false)}><X size={18}/></button></div>{list()}</dialog><span className="sr-only" role="status" aria-live="polite">{notice}</span>
   </div>;
 }
