@@ -2,12 +2,12 @@
 
 Rascunhos para Victor publicar posteriormente. **Nada foi enviado.** Público: pessoas curiosas sobre engenharia/ciência e quem acompanha a construção dos projetos. Um assunto por post, sem métricas privadas ou promessa de data.
 
-## Planejamento
+## Apresentação do projeto
 
-Condição/mídia: anúncio de desenvolvimento, com captura real identificada como esquema educativo.
+Condição/mídia: Versão local concluída. Anexar captura real; o texto não anuncia uma URL pública.
 
 ```text
-Um motor de navio merece uma câmera que possa entrar nele. Organizei o projeto para explorar um cilindro, seguir o movimento até o eixo e comparar a escala com uma pessoa. A referência escolhida é o RT-flex96C, com dois tempos e cruzeta.
+O motor de navio ganhou um corte 3D no ovictorlab. A referência é o RT-flex96C: dois tempos, cruzeta e transmissão direta até a hélice. Dá para abrir um cilindro e comparar a escala. A versão local está pronta.
 ```
 
 ## Bastidor
