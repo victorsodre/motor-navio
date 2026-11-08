@@ -6,6 +6,16 @@
 
 Aplicação educativa 3D do **Wärtsilä RT-flex96C de 14 cilindros**: do pistão à hélice, com um cilindro em corte, cruzeta, biela e transmissão direta. Desenvolvimento concluído; aplicação estática no GitHub Pages.
 
+## Vídeo relacionado do canal
+
+<a href="https://www.youtube.com/watch?v=SoQtd_t-MUk"><img src="public/video-thumbnail.jpg" width="480" alt="Assistir: Por que um navio de aço não afunda? (e por que ele vira)" /></a>
+
+**[Por que um navio de aço não afunda? (e por que ele vira)](https://www.youtube.com/watch?v=SoQtd_t-MUk)**
+
+O vídeo explica a flutuação e a estabilidade dos navios. O experimento complementa o tema mostrando o movimento do motor até a hélice.
+
+O player incorporado fica [na página do experimento](https://victorsodre.github.io/motor-navio/#video), com carregamento por clique e sem reprodução automática.
+
 ## Executar
 
 Node.js ≥22.18. Versões fixadas no lockfile.
