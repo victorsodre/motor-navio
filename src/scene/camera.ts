@@ -30,10 +30,21 @@ export function orbitDirection(position: Vector3, target: Vector3, fallback: Vec
   return direction.lengthSq() > 1e-8 ? direction.normalize() : fallback.clone().normalize();
 }
 
-/** The cutaway removes the +z half of the liner; looking from -z would show only its closed back. */
+/** Widest horizontal angle, from straight ahead (+z), at which the open cylinder still reads as a cut. */
+export const CUT_MAX_AZIMUTH = 20 * Math.PI / 180;
+
+/**
+ * The cutaway removes the +z half of the liner: looking from -z shows only its closed back, and
+ * looking from the side shows it edge-on. In the cut, the orbit keeps its height and distance but
+ * swings to within CUT_MAX_AZIMUTH of the front.
+ */
 export function directionForView(direction: Vector3, cut: boolean) {
   const next = direction.clone();
-  if (cut && next.z < 0) next.z = -next.z;
+  if (!cut) return next;
+  const radius = Math.hypot(next.x, next.z);
+  if (radius < 1e-8) return next;
+  const azimuth = Math.atan2(next.x, Math.abs(next.z)), clamped = Math.max(-CUT_MAX_AZIMUTH, Math.min(CUT_MAX_AZIMUTH, azimuth));
+  next.x = radius * Math.sin(clamped);next.z = radius * Math.cos(clamped);
   return next;
 }
 

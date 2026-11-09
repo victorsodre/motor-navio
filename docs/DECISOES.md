@@ -43,3 +43,11 @@ Revisão autorizada por Victor ("faça tudo"). O motor do site contradizia o ví
 - Câmera: resize, tela cheia e troca de vista mantêm a direção da órbita (no corte, só espelha quem olha por trás). Toque curto seleciona sem pausar; toque no vazio não desmarca. Rolagem do mouse rola a página (Ctrl/⌘ + rolagem dá zoom); no celular, um dedo na vertical rola a página.
 - Celular: texto ≥ 11 px, alvos ≥ 44 px, descrição da etapa visível, barra de ferramentas abaixo da cena. Desktop: bordas da cena com esmaecimento em vez de corte reto; corte enquadra a figura de 1,80 m acima do painel.
 - Prévia `share.jpg` refeita a partir de uma captura do novo motor.
+
+## 09/11/2026 — segunda rodada (revisão no navegador)
+
+- Corte: "Abrir cilindro" sempre abre de frente (e, dentro do corte, a órbita fica a no máximo 20° da frente) e enquadra a hélice inteira junto do cilindro aberto e da figura; antes, vindo de uma órbita lateral, a hélice saía cortada na borda e sob a barra de ferramentas.
+- Card "Cilindro e circulação de ar": a nota de comando eletrônico cita o *Basic principles of ship propulsion* da MAN (motor ME, sem eixo de cames), não o guia do MC-C8; o diâmetro segue no guia.
+- Textos de destaque (introdução, cabeçalho da lista, cards, PNG exportado e resumo do `index.html`) sem nome de navio, fabricante ou designação do motor, como no roteiro do EP341; esses nomes ficam só em Fontes e créditos.
+- Número do cabeçalho vem de `labNumber('motor-navio')` do lab-kit, igual ao menu da coleção. Dica de mouse só com ponteiro fino, dica de toque só com ponteiro grosso. Sobrescritas do kit que ficaram redundantes saíram do CSS.
+- Desktop: o detalhe do conjunto começa mais alto e rola por dentro (ações fixas embaixo), para nunca cobrir o painel do ciclo.

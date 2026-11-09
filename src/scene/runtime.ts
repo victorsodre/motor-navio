@@ -101,7 +101,8 @@ export function createScene(host: HTMLElement, onSelect: (id: string) => void, o
       if (selected) highlight.setFromObject(selected.group);
       if (!wasIsolated && state.isolated) {previousPose = {position: camera.position.clone(), target: controls.target.clone()};reframe();}
       if (wasIsolated && !state.isolated && previousPose) {camera.position.copy(previousPose.position);controls.target.copy(previousPose.target);controls.update();previousPose = null;}
-      if (changedView && !state.isolated) reframe();
+      // Opening the cylinder always starts from the front: from the side or behind the cutaway would hide the open liner.
+      if (changedView && !state.isolated) {if (state.cut && !state.scaleView) home();else reframe();}
       canvas.dataset.angle = state.angle.toFixed(2);canvas.dataset.scaleView = String(state.scaleView);canvas.dataset.cut = String(state.cut);invalidate();
     },
     home,

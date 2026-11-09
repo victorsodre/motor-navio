@@ -1,6 +1,6 @@
 import type * as T from 'three';
 import type { PartId } from '../content/catalog.ts';
-export type Part = { id: PartId; label: string; detail: string; note: string; source: string; group: T.Group };
+export type Part = { id: PartId; label: string; detail: string; note: string; sources: readonly { url: string; label: string }[]; group: T.Group };
 export type ViewState = { angle: number; reverse: boolean; scaleView: boolean; cut: boolean; selected: string | null; isolated: boolean; wireframe: boolean };
 export type SceneHandle = {
   parts: Part[]; update: (state: ViewState) => void;

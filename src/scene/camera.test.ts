@@ -1,10 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { PerspectiveCamera, Vector3 } from 'three';
-import { directionForView, fit, framing, keepOrbit, orbitDirection } from './camera.ts';
+import { Box3, PerspectiveCamera, Vector3 } from 'three';
+import { CUT_MAX_AZIMUTH, directionForView, fit, framing, keepOrbit, orbitDirection } from './camera.ts';
 import { viewBounds, type ViewMode } from './views.ts';
 import { createModel } from './model.ts';
-import { Box3 } from 'three';
 import { applyEngine } from './rig.ts';
 import { sampleEngine } from '../simulation/engine.ts';
 
@@ -46,12 +45,28 @@ test('redimensionar mantém alvo e direção da órbita e só ajusta a distânci
   assert.deepEqual(keepOrbit(position, target, bounds, 1.5, 1.5).toArray().map(v => +v.toFixed(9)), position.toArray());
 });
 
-test('trocar de vista conserva o lado da órbita; no corte só espelha quem olha por trás', () => {
-  const front = new Vector3(-6, 3, 8), back = new Vector3(-6, 3, -8);
+test('trocar de vista conserva a órbita fora do corte; no corte, abre de frente mesmo vindo de lado ou de trás', () => {
+  const front = new Vector3(-2, 3, 8), back = new Vector3(-6, 3, -8), side = new Vector3(20, 6, 1), azimuth = (v: Vector3) => Math.abs(Math.atan2(v.x, v.z));
   assert.deepEqual(directionForView(front, true).toArray(), front.toArray());
   assert.deepEqual(directionForView(back, false).toArray(), back.toArray());
-  assert.deepEqual(directionForView(back, true).toArray(), [-6, 3, 8]);
+  assert.deepEqual(directionForView(side, false).toArray(), side.toArray());
+  for (const from of [back, side, new Vector3(13, 8, 24), new Vector3(-9, 2, -.5)]) {
+    const next = directionForView(from, true);
+    assert.ok(next.z > 0 && azimuth(next) <= CUT_MAX_AZIMUTH + 1e-9, from.toArray().join());
+    close(next.y, from.y);close(Math.hypot(next.x, next.z), Math.hypot(from.x, from.z));
+  }
   const fallback = new Vector3(0, 0, 1);
   assert.deepEqual(orbitDirection(new Vector3(2, 2, 2), new Vector3(2, 2, 2), fallback).toArray(), [0, 0, 1]);
   close(orbitDirection(new Vector3(3, 0, 4), new Vector3(), fallback).length(), 1);
+});
+
+test('o corte enquadra o cilindro aberto, a figura e a hélice inteira em qualquer ângulo', () => {
+  const model = createModel();
+  try {
+    const view = viewBounds('cut'), ids = ['cylinder', 'shaft', 'scale'];
+    for (const angle of [0, 90, 180, 270]) {
+      applyEngine(model, sampleEngine(angle), true);
+      for (const part of model.parts.filter(p => ids.includes(p.id))) assert.ok(view.containsBox(new Box3().setFromObject(part.group, true)), `${part.id} ${angle}°`);
+    }
+  } finally {model.dispose();}
 });
