@@ -5,11 +5,11 @@ React 19.2.6, TypeScript 5.9.3, Three.js 0.187.0 e Vite 8.3.6; versões fixas no
 | Arquivo | Responsabilidade |
 |---|---|
 | `src/simulation/engine.ts` | Ângulo 0–360°, cinemática de cruzeta, curso, válvula didática, janelas geometricamente descobertas e relógio limitado. |
-| `src/scene/model.ts` | Geometria autoral de seis grupos, cilindro de demonstração, repetição estrutural dos outros treze, hélice e referência humana. |
+| `src/scene/model.ts` | Geometria autoral de seis grupos, cilindro de demonstração, repetição estrutural dos outros seis (7S80ME-C8), `LAYOUT` derivado das medidas, hélice e referência humana. |
 | `src/scene/rig.ts` | Aplica uma pose absoluta: pistão, haste, biela, virabrequim, eixo, válvula e indicadores de ar. |
 | `src/scene/runtime.ts` | WebGL, câmera, seleção, corte, isolamento, escala, demanda de renderização e perda de contexto. |
-| `src/scene/camera.ts`, `capture.ts` | Enquadramento por limites projetados e exportação 1920×1080 / 1080×1920, restaurando a câmera. |
-| `src/content/` | Catálogo, explicações, referências e limites visíveis. |
+| `src/scene/camera.ts`, `views.ts`, `gesture.ts`, `capture.ts` | Enquadramento por limites projetados, órbita preservada em resize/tela cheia/troca de vista, toque × arrasto e exportação 1920×1080 / 1080×1920 sem o destaque de seleção. |
+| `src/content/` | Catálogo, explicações, referências, textos do PNG (lidos de `DIMENSIONS`), vídeo com troca agendada e VideoObject (`video-meta.ts`, usado pelo `vite.config.ts` no build). |
 | `src/App.tsx`, `src/ui/` | Estado, catálogo, tour, controles HTML, diálogos e fallback. |
 
 ## Invariantes

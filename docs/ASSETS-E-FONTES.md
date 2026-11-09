@@ -13,8 +13,8 @@ Leitura em 07/11/2026. A análise consultou as APIs oficiais do Instagram/YouTub
 
 ## Apuração concluída
 
-- Manual RT-flex96C 0050–1/A1 (2004) e Technology Review (2008), citados com páginas e limites em APURACAO.md.
-- Dois tempos, cruzeta, transmissão direta; bore 960 mm, curso 2500 mm, cota A 25.914 mm para 14 cilindros.
+- Desde 09/11/2026: MS Ore Brasil e Valemax (Wikipédia), Project Guide MAN S80MC-C8-TII (2010) e MAN Basic principles of ship propulsion, com seções e limites em APURACAO.md.
+- Dois tempos, cruzeta, transmissão direta; diâmetro 800 mm, curso 3.200 mm, 7 cilindros, 78 rpm, cota A 12.653 mm (S80MC-C8). Capa do Short (`public/video-next.jpg`) reduzida da capa do EP341 do canal.
 
 Para cada afirmação, registrar: texto, fonte primária, URL/página, data de consulta, trecho ou figura de suporte, unidades, limites e onde aparece na experiência. Não listar uma instituição como se um documento específico já tivesse sido conferido.
 
@@ -28,7 +28,7 @@ Registro do que é entregue ao navegador:
 
 | Arquivo/asset | Autor e URL | Licença/termos e data | Uso web permitido | Alterações | Hash/créditos |
 |---|---|---|---|---|---|
-| Geometria de `src/scene/model.ts` | Victor Sodré / ovictorlab | Criação própria, 07/11/2026 | Sim, no projeto autorizado | Esquema do RT-flex96C e hélice ilustrativa | Créditos na interface |
+| Geometria de `src/scene/model.ts` | Victor Sodré / ovictorlab | Criação própria, 07/11/2026 | Sim, no projeto autorizado | Esquema do 7S80ME-C8 e hélice ilustrativa | Créditos na interface |
 | `public/icon.svg`, `Brand.tsx` | Código oficial ovictorlab.com | Marca do usuário | Uso autorizado neste projeto | Transposição fiel | IDENTIDADE-VISUAL.md |
 | Fontes via Fontsource | Anton, Archivo, Archivo Black, JetBrains Mono | SIL OFL, cópias em `public/licenses/` | Sim | Subconjuntos latinos locais | Créditos e licenças no diálogo |
 | Código base de câmera/UI | Projetos anteriores da coleção, do mesmo usuário | Reuso dentro do pedido | Sim | Motor marítimo e seis grupos | Sem GLB ou áudio do Fusquinha |

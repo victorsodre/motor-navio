@@ -7,7 +7,7 @@ Rascunhos para Victor publicar posteriormente. **Nada foi enviado.** Público: p
 Condição/mídia: Anexar captura real da experiência. URL: https://victorsodre.github.io/motor-navio/
 
 ```text
-O motor de navio do ovictorlab já está no ar. Explore um cilindro em corte, a cruzeta e o caminho até a hélice. Um modelo educativo do RT-flex96C, com proporções e simplificações explicadas.
+O motor de navio do ovictorlab já está no ar. Explore um cilindro em corte, a cruzeta e o caminho até a hélice. Um modelo educativo do motor de 7 cilindros do navio do minério, com proporções e simplificações explicadas.
 ```
 
 ## Bastidor
@@ -15,7 +15,7 @@ O motor de navio do ovictorlab já está no ar. Explore um cilindro em corte, a 
 Condição/mídia: recurso implementado e validado localmente. Anexar captura real do cilindro em corte; sem sugerir acesso público.
 
 ```text
-O motor de navio já funciona no laboratório: pistão, cruzeta, biela e hélice no mesmo ciclo. Dá para abrir um cilindro e comparar o curso de 2,50 m com uma figura de 1,80 m. É um esquema educativo do RT-flex96C. Ainda sem link público.
+O motor de navio já funciona no laboratório: pistão, cruzeta, biela e hélice no mesmo ciclo. Dá para abrir um cilindro e comparar o curso de 3,20 m com uma figura de 1,80 m. É um esquema educativo do motor de 7 cilindros do navio do minério. Ainda sem link público.
 ```
 
 ## Lançamento

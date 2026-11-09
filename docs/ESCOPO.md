@@ -15,7 +15,7 @@ Um motor marítimo de arquitetura identificada, com um cilindro em corte e camin
 - Eixo propulsor
 - Referência de escala
 
-Seis grupos implementados no catálogo, vinculados à geometria e às fontes. Motor escolhido: Wärtsilä RT-flex96C de 14 cilindros, dois tempos, cruzeta e acoplamento direto.
+Seis grupos implementados no catálogo, vinculados à geometria e às fontes. Motor escolhido (desde 09/11/2026): MAN B&W 7S80ME-C8 do EP341, dois tempos, 7 cilindros, cruzeta e acoplamento direto. Ações extras com fonte: velocidade real (78 rpm) e ré.
 
 ## Ações principais
 

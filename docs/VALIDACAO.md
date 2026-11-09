@@ -52,3 +52,7 @@ Fluxo a conferir após cada publicação: abrir pelo cabeçalho, capa legível, 
 Nesta rodada, os dez players foram carregados no Chrome em estado pronto (`5` / cued), com o ID esperado e sem reprodução automática. Navegação pelo cabeçalho, clique/Enter, dimensões mínimas, thumbnail local e link direto aprovados; nenhuma requisição ao YouTube antes do clique ou erro JavaScript nos fluxos.
 
 O mesmo fluxo passou nas dez URLs públicas do GitHub Pages em 08/11/2026: player pronto com ID correto, sem autoplay, sem chamadas ao YouTube antes do clique, teclado e dimensões responsivas aprovados, sem erros JavaScript. A verificação confirmou carregamento do player; não assistiu integralmente aos vídeos.
+
+## Revisão do motor do EP341 — 09/11/2026
+
+`npm test` (17 testes), `npm run build` e `npm run check:pages` aprovados. Navegador: Chromium headless (Playwright, SwiftShader), sem o Chrome do Mac. Conferido: motor inteiro, corte, escala e ré em 1440×900 e 1279×800; celular 390×844 sem texto abaixo de 11 px, sem alvo menor que 44 px e sem rolagem horizontal; órbita mantida após arrasto + troca de vista + resize; toque no vazio não pausa; rolagem do mouse rola a página e Ctrl + rolagem dá zoom; `touch-action: pan-y` no canvas; PNG de escala sem o destaque amarelo. Ainda sem telefone físico.

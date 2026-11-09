@@ -11,6 +11,6 @@ export function applyEngine(model:EngineModel,s:EngineSample,cut:boolean){
  model.gasMat.color.set(s.phase==='power'?'#f4b95c':s.phase==='compression'?'#c493d4':'#74c4e4');
  model.dots.forEach((dot,i)=>{
   dot.visible=s.portsOpen;const t=((s.degrees/120+i/18)%1);
-  dot.position.set(DEMO_X+Math.sin(i*2.4)*.28,7.2+t*2.4,-.15+Math.cos(i*2.4)*.2);
+  dot.position.set(DEMO_X+Math.sin(i*2.4)*.24,D.portTop-.35+t*(D.headY-D.portTop+.1),-.12+Math.cos(i*2.4)*.17);
  });
 }

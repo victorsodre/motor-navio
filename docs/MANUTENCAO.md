@@ -14,7 +14,7 @@
 
 ## Testes proporcionais
 
-Sete testes para cinemática, relógio, rig, escala e enquadramento. Integração para catálogo/nós do asset e retorno ao estado inicial. Fluxo de navegador para carregar, interagir e resetar. Não criar testes que apenas repitam o texto destes guias.
+Testes para cinemática (avante e ré), relógio e velocidade real, rig, escala, enquadramento e órbita preservada, toque × arrasto, textos do PNG e troca agendada do vídeo/VideoObject. Integração para catálogo/nós do asset e retorno ao estado inicial. Fluxo de navegador para carregar, interagir e resetar. Não criar testes que apenas repitam o texto destes guias.
 
 ## Rotina após lançamento
 
@@ -36,7 +36,7 @@ Usar a combinação de qualidade, uso e custo de manutenção para ajustar o pr�
 
 ## Regressões específicas
 
-- Em 0°/180°, diferença de altura do pistão = 2,50 m. Cruzeta sempre vertical, biela com comprimento constante e eixo/hélice 1:1.
+- Em 0°/180°, diferença de altura do pistão = curso da ficha (3,20 m). Em ré, mesmas etapas e manivela espelhada. Cruzeta sempre vertical, biela com comprimento constante e eixo/hélice 1:1.
 - Janelas abrem pela posição real do pistão; escape permanece aberto durante a lavagem. Ângulos são ilustrativos, não configuração operacional.
 - Conferir 45°, 100°, 180°, 300° e 360°; abrir/fechar, isolar/retornar e comparar escala não alteram a pose do mecanismo.
 - Reset: 45°, parado, vista inteira, velocidade 1×, malha desligada, seleção vazia. `R` reenquadra e `Escape` fecha diálogo/detalhe.
@@ -46,3 +46,7 @@ Usar a combinação de qualidade, uso e custo de manutenção para ajustar o pr�
 - Falha/perda de WebGL: mensagem em português, controle desabilitado e fontes acessíveis. Conferir comportamento por teclado e preferência de movimento reduzido.
 
 A cobertura móvel atual é emulada. Registrar aparelho/browser quando houver teste físico. Publicação e medições públicas continuam posteriores ao desenvolvimento.
+
+## Troca do vídeo e dados estruturados
+
+`src/content/video.ts` tem o vídeo vigente e o `next` (Short do EP341, a partir de 2026-11-17T19:00:00Z). A página troca sozinha; o `index.html` (VideoObject e link do `noscript`) é gerado no build, e o workflow tem uma reconstrução agendada para 17/11 às 19h20 UTC. Ao mudar de vídeo, atualizar `videoFacts` (data e resumo) e rodar `npm run check:pages`.

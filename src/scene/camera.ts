@@ -14,11 +14,36 @@ export function framing(bounds: Box3, aspect: number, direction: Vector3, fov = 
     const p = new Vector3(x, y, z).sub(center), toward = p.dot(forward);
     distance = Math.max(distance, Math.abs(p.dot(right)) / tanH + toward, Math.abs(p.dot(up)) / tanV + toward);
   }
-  return { center, position: center.clone().addScaledVector(forward, distance * 1.08) };
+  distance *= 1.08;
+  return { center, distance, position: center.clone().addScaledVector(forward, distance) };
 }
 
 export function fit(camera: PerspectiveCamera, bounds: Box3, direction: Vector3) {
   const pose = framing(bounds, camera.aspect, direction, camera.fov);
   camera.position.copy(pose.position); camera.lookAt(pose.center); camera.updateProjectionMatrix();
   return pose.center;
+}
+
+/** Where the camera sits relative to its orbit target: the user's current orbit. */
+export function orbitDirection(position: Vector3, target: Vector3, fallback: Vector3) {
+  const direction = position.clone().sub(target);
+  return direction.lengthSq() > 1e-8 ? direction.normalize() : fallback.clone().normalize();
+}
+
+/** The cutaway removes the +z half of the liner; looking from -z would show only its closed back. */
+export function directionForView(direction: Vector3, cut: boolean) {
+  const next = direction.clone();
+  if (cut && next.z < 0) next.z = -next.z;
+  return next;
+}
+
+/**
+ * New camera position after the viewport aspect changes: same target, same
+ * direction, distance scaled by how much the framing needs to change.
+ */
+export function keepOrbit(position: Vector3, target: Vector3, bounds: Box3, fromAspect: number, toAspect: number, fov = 38) {
+  const direction = position.clone().sub(target);
+  if (direction.lengthSq() < 1e-8 || !(fromAspect > 0) || !(toAspect > 0)) return position.clone();
+  const before = framing(bounds, fromAspect, direction, fov).distance, after = framing(bounds, toAspect, direction, fov).distance;
+  return target.clone().addScaledVector(direction, after / before);
 }

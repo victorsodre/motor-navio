@@ -32,3 +32,14 @@ Victor autorizou aprimorar e tornar públicos os dez projetos com HTML funcional
 ## 2026-11-08 — vídeo do canal incorporado
 
 Pedido de Victor: embed abaixo do experimento e thumbnail clicável no README. Vídeo `SoQtd_t-MUk`, autoria ovictorlab confirmada pelo oEmbed público. O vídeo explica a flutuação e a estabilidade dos navios. O experimento complementa o tema mostrando o movimento do motor até a hélice. Player `youtube-nocookie.com`, criado só por clique, `autoplay=0`, controles nativos, referrer de origem e link direto sempre disponível. Capa local para não carregar o YouTube na abertura; layout landscape. Cabeçalho leva à seção `#video`. Identidade preservada; nenhum upload ou alteração de vídeo no canal.
+
+## 2026-11-09 — motor do EP341, celular e câmera
+
+Revisão autorizada por Victor ("faça tudo"). O motor do site contradizia o vídeo: era o RT-flex96C de 14 cilindros e 2,50 m de curso, e o EP341 fala do motor de 7 cilindros, mais de 3 m de curso e 78 rpm. Decisão: reparametrizar para o **MAN B&W 7S80ME-C8** do Ore Brasil (fontes e limites em APURACAO.md); a referência RT-flex96C fica substituída.
+
+- Modelo, catálogo, PNG exportado e `index.html` leem as mesmas medidas (`DIMENSIONS`): 7 cilindros, 0,80 m × 3,20 m, cota A de 12,653 m (do S80MC-C8, marcada assim). Alturas e hélice seguem ilustrativas e dito na tela.
+- Novos controles com fonte: velocidade "Real · 78 rpm" (1× = 15 rpm) e "Dar ré" (o comando eletrônico espelha as válvulas; etapas iguais, rotação invertida).
+- Vídeo: EP106 continua até 17/11 19h UTC com contexto honesto ("não explica o motor") e Reel do motor; depois entra o Short zPVEOAuuBUg em retrato (`next`). VideoObject e texto indexável no `index.html`; título com "como funciona o motor de navio".
+- Câmera: resize, tela cheia e troca de vista mantêm a direção da órbita (no corte, só espelha quem olha por trás). Toque curto seleciona sem pausar; toque no vazio não desmarca. Rolagem do mouse rola a página (Ctrl/⌘ + rolagem dá zoom); no celular, um dedo na vertical rola a página.
+- Celular: texto ≥ 11 px, alvos ≥ 44 px, descrição da etapa visível, barra de ferramentas abaixo da cena. Desktop: bordas da cena com esmaecimento em vez de corte reto; corte enquadra a figura de 1,80 m acima do painel.
+- Prévia `share.jpg` refeita a partir de uma captura do novo motor.
