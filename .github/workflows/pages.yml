@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
   # Reconstrói no dia da troca agendada do vídeo (EP341), para o index.html estático acompanhar.
   schedule:
-    - cron: '20 19 17 11 *'
+    - cron: '20 17 17 11 *'
 
 permissions:
   contents: read

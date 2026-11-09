@@ -49,4 +49,4 @@ A cobertura móvel atual é emulada. Registrar aparelho/browser quando houver te
 
 ## Troca do vídeo e dados estruturados
 
-`src/content/video.ts` tem o vídeo vigente e o `next` (Short do EP341, a partir de 2026-11-17T19:00:00Z). A página troca sozinha; o `index.html` (VideoObject e link do `noscript`) é gerado no build, e o workflow tem uma reconstrução agendada para 17/11 às 19h20 UTC. Ao mudar de vídeo, atualizar `videoFacts` (data e resumo) e rodar `npm run check:pages`.
+`src/content/video.ts` tem o vídeo vigente e o `next` (Short do EP341, a partir de 2026-11-17T17:00:00Z). A página troca sozinha; o `index.html` (VideoObject e link do `noscript`) é gerado no build, e o workflow tem uma reconstrução agendada para 17/11 às 17h20 UTC. Ao mudar de vídeo, atualizar `videoFacts` (data e resumo) e rodar `npm run check:pages`.
