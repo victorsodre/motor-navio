@@ -2,7 +2,7 @@
 
 **[Abrir a experiência →](https://victorsodre.github.io/motor-navio/)** · [Os 10 experimentos](docs/COLECAO.md) · [Publicação e manutenção](docs/PUBLICACAO.md)
 
-[![Motor de navio — captura real da experiência](public/share.png)](https://victorsodre.github.io/motor-navio/)
+[![Motor de navio — captura real da experiência](public/share.jpg)](https://victorsodre.github.io/motor-navio/)
 
 Aplicação educativa 3D do **Wärtsilä RT-flex96C de 14 cilindros**: do pistão à hélice, com um cilindro em corte, cruzeta, biela e transmissão direta. Desenvolvimento concluído; aplicação estática no GitHub Pages.
 
